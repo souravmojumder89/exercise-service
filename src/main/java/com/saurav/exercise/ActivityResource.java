@@ -34,8 +34,8 @@ public class ActivityResource {
 	@GET
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public User getActivityUser(@PathParam("activityId") String activityId) {
-		System.out.println(activityId);
-		return activityRepository.findActivity(activityId).getUser();
+		User user = activityRepository.findActivity(activityId).getUser();
+		return user;
 	}
 
 }
